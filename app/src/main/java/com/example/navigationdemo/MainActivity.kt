@@ -51,7 +51,11 @@ fun MainScreen(modifier: Modifier = Modifier) {
 
     NavDisplay(
         backStack = backStack,
-        onBack = { backStack.removeLastOrNull() },
+        onBack = {
+            while (backStack.size > 1) {
+                backStack.removeLastOrNull()
+            }
+        },
         entryProvider = entryProvider {
             entry<HomeScreen> {
                 Home(onNavigation)
