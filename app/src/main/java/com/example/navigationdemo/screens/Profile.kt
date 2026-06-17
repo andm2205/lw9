@@ -18,4 +18,10 @@ fun Profile(onClearBackStack: () -> Unit) {
             }
         }
     }
+
+    Button(onClick = {
+        onClearBackStack()
+    }) {
+        Text(text = "Go Home")
+    }
 }

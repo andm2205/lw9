@@ -7,6 +7,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation3.runtime.NavKey
+import com.example.navigationdemo.ProfileScreen
 
 @Composable
 fun Welcome(onNavigation: (NavKey) -> Unit, name: String = "") {
@@ -18,5 +19,11 @@ fun Welcome(onNavigation: (NavKey) -> Unit, name: String = "") {
                 Text(text = "Set up your Profile")
             }
         }
+    }
+
+    Button(onClick = {
+        onNavigation(ProfileScreen)
+    }) {
+        Text(text = "Set up your Profile")
     }
 }
